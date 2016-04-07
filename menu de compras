@@ -1,0 +1,26 @@
+// dividir numero.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+void main ()
+{
+	float h,hq,pf,s,t;
+	cout<<"ingrese cantidad de hamburguesas compradas: ";
+		cin>>h;
+	cout<<"Ingrese cantidad de hamburguesas con queso compradas: ";
+		 cin>>hq;
+	 cout<<"Ingrese cuantas porciones de papas fritas compro: ";
+		 cin>>pf;
+	cout<<"Ingrese cuantas sodas compro: ";
+		 cin>>s;
+	
+	t=(h*3)+(hq*5)+(pf*2)+(s*2.5);
+
+	cout<<"El total de compras es: "<<t<<"Bs.";
+	getch();
+}
