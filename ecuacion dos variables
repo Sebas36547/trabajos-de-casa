@@ -1,0 +1,39 @@
+//dividir numero.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+void main ()
+{
+	
+ float A,B,C,D,E,F,x,y,y1;
+	cout<<"ingrese el valor A: ";
+		cin>>A;
+	cout<<"ingrese el valor B: ";
+		cin>>B;
+	cout<<"ingrese el valor C: ";
+		cin>>C;
+	cout<<"ingrese el valor D: ";
+		cin>>D;
+	cout<<"ingrese el valor E: ";
+		cin>>E;
+	cout<<"ingrese el valor F: ";
+		cin>>F;
+
+		x=(E*C-B*F)/(A*E-B*D);
+
+		y=((A*x)-C)/B;
+
+        y1=y*-1;
+
+		cout<<"x es: "<<x<<endl;
+		getch();
+		
+		cout<<"y es: "<<y1<<endl;
+		getch();
+
+}
