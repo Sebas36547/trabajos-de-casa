@@ -1,0 +1,55 @@
+// dividir numero.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "stdlib.h"
+
+using namespace std;
+
+void main ()
+{
+	int i,nr,faltas;
+	char resp;//declarar una variable q acepta letras
+	float pr,par1,par2,ef,promedio,nf;
+	do	{
+		cout<<"Ingrese la nota practica: " << endl;
+			cin>>pr;
+		cout<<"Ingrese la nota del primer parcial: "<< endl;
+			cin>>par1;
+		cout<<"Ingrese la nota del segundo parcial: "<< endl;
+			cin>>par2;
+		cout<<"Ingrese la nota del examen final: "<< endl;
+			cin>>ef;
+		cout<<"Ingrese el numero de faltas: "<< endl;
+			cin>>faltas;
+
+		if(faltas<=10){	
+			nf=(pr*0.2)+(((par1+par2)/2)*0.4)+(ef*0.4);
+			cout<<"La nota final es: "<<nf<<endl;
+		if (nf>=51)
+			cout<<"Aprobo la materia"<<endl;
+		else
+			cout<<"Esta reprobado"<<endl;
+		}
+		else {
+			nf=(pr*0.2)+(((par1+par2)/2)*0.4)+(ef*0);
+				cout<<"La nota final es: "<<nf<<endl;
+				if (nf>=51)
+			cout<<"Aprobo la materia"<<endl;
+		else
+			cout<<"Esta reprobado"<<endl;
+		}
+		
+				
+		getch();
+
+		cout<<"Desea continuar: ('n' para finalizar) " << endl;
+			cin>>resp;
+		system("cls");
+	} while (resp != 'n');
+				cout<<"Ya no hay mas alumnos";
+	getch();
+
+}
