@@ -1,0 +1,34 @@
+// factorialvalidacion.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "stdlib.h"
+
+using namespace std;
+
+void main()
+
+{
+	int i,n,suma;
+	
+	do{
+		do{
+		cout<<"Ingrese el numero limite hasta el que desea sumar: ";
+		cin>>n;
+		
+	}while (n<0);
+
+	suma=0;
+	i=0;
+	while(i<=n){
+		suma=suma+i;
+	i++;
+	}
+	cout<<"La suma de los numeros hasta "<< n <<" es: "<<suma<<endl;
+	getch();
+	system ("cls");
+	}while(n!=0);
+	
+}
