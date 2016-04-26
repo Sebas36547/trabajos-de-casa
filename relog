@@ -1,0 +1,24 @@
+// relog.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include "conio.h"
+#include <iostream>
+#include "math.h"
+
+using namespace std;
+
+void main()
+{
+	int mm,hh,ss,ms;
+	ss=0-59;
+	mm=0-59;
+	hh=0-23;
+	ms=0-99;
+	for(hh=0;hh<24;hh++)
+	for(mm=0;mm<60;mm++)
+	for(ss=0;ss<60;ss++)
+	for(ms=0;ms<3700;ms++)
+				
+	cout<<hh<<":"<<mm<<":"<<ss<<endl;
+}
