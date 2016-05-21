@@ -1,0 +1,47 @@
+// practico funciones.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "stdlib.h"
+#include "math.h"
+
+using namespace std;
+
+float transformar(float x);
+
+void main()
+{	
+	float t,q,res;
+	do{
+		
+		cout<<"Ingrese el valor en binario: ";
+		cin>>t;
+			
+		res=transformar(t);
+
+		cout<<"El numero en decimal es: "<<res<<endl;
+		getch();
+		cout<<"Si quiere terminar -666"<<endl;
+		cin>>q;
+		system("cls");
+	}while(q!=-666);
+}
+float transformar(float x)
+{		float p,result,m;
+		int d,u;
+		p=0;
+		result=0;
+			for(int i=1;i<=x;i=i*10)//usa la separacion de elementos
+			{
+				d=(x/i);
+				
+				u=d%10;
+				m=(u*(pow(2,p)));
+				p=p+1;
+				result=result+m;
+
+			}
+		return result;
+}
