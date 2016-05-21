@@ -1,0 +1,46 @@
+// practico funciones.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "stdlib.h"
+#include "math.h"
+
+using namespace std;
+
+float serie(float x, float n);
+
+void main()
+{	
+	float t,p,q,res;
+	do{
+		
+		cout<<"Ingrese el valor de x: ";
+		cin>>t;
+		cout<<"Ingrese el valor de n: ";
+		cin>>p;
+		
+		res=serie(t,p);
+
+		cout<<"La suma de la serie es: "<<res<<endl;
+		getch();
+		cout<<"Si quiere terminar -666"<<endl;
+		cin>>q;
+		system("cls");
+	}while(q!=-666);
+}
+float serie(float x, float n)
+{float result,es,fac,sig;
+	result=0;
+	es=1;
+	sig=1;
+	for(int i=1;i<=n;i=i+2)
+	{		
+		es=es*i;
+		fac=es;
+		result=result+sig*((pow(x,i))/fac);
+		sig=sig*(-1);
+	}	
+	return result;
+}
