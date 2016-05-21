@@ -1,0 +1,37 @@
+// practico funciones.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "stdlib.h"
+using namespace std;
+
+float FAC(float f);
+
+void main()
+{	
+	float fact,exp,res,t;
+	do{
+		cout<<"Para sacar factorial"<<endl;
+		cout<<" "<<endl;
+		cout<<"Ingrese el factorial que desea sacar: ";
+		cin>>fact;
+		
+		res=FAC(fact);
+
+		cout<<"El factorial es: "<<res<<endl;
+		getch();
+		cout<<"Si quiere terminar -666"<<endl;
+		cin>>t;
+		system("cls");
+	}while(t!=-666);
+}
+float FAC(float f)
+{float es=1;
+	for(int i=1;i<=f;i++)
+	{
+		es=es*i;
+	}	
+	return es;
+}
