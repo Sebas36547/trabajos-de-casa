@@ -1,0 +1,39 @@
+// practico funciones.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "stdlib.h"
+using namespace std;
+
+float POTEN(float b, float e);
+
+void main()
+{	
+	float base,exp,res,t;
+	do{
+		cout<<"Para sacar potencia"<<endl;
+		cout<<" "<<endl;
+		cout<<"Ingrese la base: ";
+		cin>>base;
+		cout<<"Ingrese el exponente: ";
+		cin>>exp;
+
+		res=POTEN(base,exp);
+
+		cout<<"La potencia es: "<<res<<endl;
+		getch();
+		cout<<"Si quiere terminar -666"<<endl;
+		cin>>t;
+		system("cls");
+	}while(t!=-666);
+}
+float POTEN(float b, float e)
+{float es=1;
+	for(int i=1;i<=e;i++)
+	{
+		es=es*b;
+	}	
+	return es;
+}
