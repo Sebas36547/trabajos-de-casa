@@ -1,0 +1,238 @@
+// pruebafinal.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h" 
+#include <iostream>
+#include "conio.h"
+#include "stdlib.h"
+#define MAX 1000
+
+using namespace std; 
+
+void cargar (double a[]);
+int numdep (double a[], int b);
+void envdat (float numero, int area, int caso);
+int validar (char cadena[50]);
+int convertir (char cadena[50]);
+
+void main() 
+{  
+	system ("color 80");
+	double vec[MAX];
+	cargar(vec);
+	char departamento[50];
+	int op,op1,z,dep,sw;
+	cout<<"Beta 1.1"<<endl;
+	cout<<" "<<endl;
+	do{
+		
+			cout<<"    Ingrese su numero de departamento"<<endl;
+			cout<<"    ";
+			cin>>departamento;
+			sw=validar(departamento);
+			//cout<<sw<<endl;
+		
+			dep=convertir (departamento);
+		
+			z=numdep(vec,dep);
+		
+	}while(z!=2 && sw==1);
+	system("cls");
+	do{
+		cout<<"Beta 1.1"<<endl;
+		cout<<" "<<endl;
+
+	cout<<"- - - - - - - MENU - - - - - - - "<<endl;
+	cout<<" "<<endl;
+	cout<<" Escoja uno:"<<endl; 
+	cout<<" 1. Problemas internos: "<<endl; 
+	cout<<" 2. Problemas de convivencia: "<<endl; 
+	cout<<" 3. Problemas en areas sociales: "<<endl; 
+	cout<<" 4. Seguridad: "<<endl; 
+	cout<<" 0. Salir: "<<endl; 
+	cout<<" "<<endl;
+	cin>>op;
+	}while(op!=1 && op!=2 && op!=3 && op!=4 && op!=0);
+	system ("cls");
+	switch (op) 
+	{ 
+	case 1: 
+		{ 
+			do{
+				cout<<"Beta 1.1"<<endl;
+				cout<<" "<<endl;
+			cout<<" "<<endl;
+			cout<<" 1. Arreglo de cañerias"<<endl; 
+			cout<<" 2. Problemas con las conexiones electricas"<<endl; 
+			cout<<" 3. Mascotas extraviadas"<<endl; 
+			cout<<" 4. Obstruccion de via"<<endl; 
+			cout<<" "<<endl;
+			cin>>op1;
+			}while(op1!=1 && op1!=2 && op1!=3 && op1!=4);
+			cout<<" "<<endl;
+			getch ();
+			cout<<" Su mensaje ha sido enviado"<<endl;
+			getch ();
+
+			break;
+		}
+	case 2: 
+		{ 
+			do{
+				cout<<"Beta 1.1"<<endl;
+				cout<<" "<<endl;
+			cout<<" "<<endl;
+			cout<<" 1. Ruidos fuertes fuera de horario"<<endl; 
+			cout<<" 2. Incendio cercano"<<endl; 
+			cout<<" 3. Mascota suelta"<<endl; 
+			cout<<" 4. Basura dispersa"<<endl; 
+			cout<<" "<<endl;
+			cin>>op1;
+			}while(op1!=1 && op1!=2 && op1!=3 && op1!=4);
+			cout<<" "<<endl;
+			getch ();
+			cout<<" Su mensaje ha sido enviado"<<endl;
+			getch ();
+			break;
+		}
+	case 3: 
+		{ 
+			do{
+				cout<<"Beta 1.1"<<endl;
+				cout<<" "<<endl;
+			cout<<" "<<endl;
+			cout<<" 1. Piscina contaminada"<<endl; 
+			cout<<" 2. Parque dañado"<<endl; 
+			cout<<" 3. Defeciencia administrativa"<<endl; 
+			cout<<" 4. conflictos intervecinales"<<endl; 
+			cout<<"  "<<endl;
+			cin>>op1;
+			}while(op1!=1 && op1!=2 && op1!=3 && op1!=4);
+			cout<<" "<<endl;
+			getch ();
+			cout<<" Su mensaje ha sido enviado"<<endl;
+			getch ();
+			break;
+		}
+
+	case 4: 
+		{ 
+			do{
+				cout<<"Beta 1.1"<<endl;
+				cout<<" "<<endl;
+			cout<<" "<<endl;
+			cout<<" 1. Ninho extraviado"<<endl; 
+			cout<<" 2. Mascota agresiva"<<endl; 
+			cout<<" 3. Intruso"<<endl; 
+			cout<<" 4. Objetos extraviados"<<endl; 
+			cout<<"  "<<endl;
+			cin>>op1;
+			}while(op1!=1 && op1!=2 && op1!=3 && op1!=4);
+			cout<<" "<<endl;
+			getch ();
+			cout<<" Su mensaje ha sido enviado"<<endl;
+			getch ();
+			break; 
+		}
+
+	case 0: 
+		{ 
+			cout<<"Beta 1.1"<<endl;
+			cout<<" "<<endl;
+			cout<<" "<<endl;
+			cout<<" Salir del programa"<<endl; 
+		}break; 
+	default:{ 
+		cout<<" valor invalido"<<endl; 
+		getch(); 
+		break; 
+			} 
+	} 
+	system ("cls");
+
+	getch();
+	getch();
+	cout<<"Beta 1.1"<<endl;
+	cout<<" "<<endl;
+	cout<<" "<<endl;
+	cout<<" Codigos de las alarmas"<<endl;
+	cout<<" "<<endl;
+	cout<<" 1.Problemas internos:"<<endl; 
+	cout<<" "<<endl;
+	cout<<"	1. Arreglo de cañerias"<<endl; 
+	cout<<"	2. Problemas con las conexiones electricas"<<endl; 
+	cout<<"	3. Mascotas extraviadas"<<endl; 
+	cout<<"	4. Obstruccion de via"<<endl;
+	cout<<" "<<endl;
+	cout<<" 2.Problemas de convivencia:"<<endl;
+	cout<<" "<<endl;
+	cout<<"	1. Ruidos fuertes fuera de horario"<<endl; 
+	cout<<"	2. Incendio cercano"<<endl; 
+	cout<<"	3. Mascota suelta"<<endl; 
+	cout<<"	4. Basura dispersa"<<endl;
+	cout<<" "<<endl;
+	cout<<" 3.Problemas en areas sociales:"<<endl;
+	cout<<" "<<endl;
+	cout<<"	1. Piscina contaminada"<<endl; 
+	cout<<"	2. Parque dañado"<<endl; 
+	cout<<"	3. Defeciencia administrativa"<<endl; 
+	cout<<"	4. conflictos intervecinales"<<endl;
+	cout<<" "<<endl;
+	cout<<" 4.Seguridad:"<<endl;
+	cout<<" "<<endl;
+	cout<<"	1. Ninho extraviado"<<endl; 
+	cout<<"	2. Mascota agresiva"<<endl; 
+	cout<<"	3. Intruso"<<endl; 
+	cout<<"	4. Objetos extraviados"<<endl;
+	cout<<" "<<endl;
+	cout<<" Mensaje recibido"<<endl;
+	envdat(dep,op,op1);
+	getch();
+} 
+void cargar (double a[])
+{ 
+	int n=1;
+	for(int i=0;i<MAX;i++)
+	{
+		a[i]=n;
+		n=n+1;
+	}
+}
+int numdep (double a[], int b)
+{ int i;
+for( i=0;i<MAX;i++){
+	if(a[i]==b)
+		return 2;
+
+}
+
+		return 1;
+
+}
+void envdat (float numero, int area, int caso)
+{	cout<<" Numero de departamento: "<<numero<<endl;
+cout<<" Numero del area del problema: "<<area<<endl;
+cout<<" Numero de problema especifico: "<<caso<<endl;
+}
+int validar (char cadena[50])
+{
+	int i=0,sw=0,j;
+	j=strlen(cadena);
+
+	while(i<j && sw==0)
+	{
+		if(isdigit(cadena[i])!=0)
+		{
+		i++;
+	}
+	else
+	{
+		sw=1;
+		}
+		return sw;
+	}
+}
+int convertir (char cadena[50])
+{
+	return ((int)cadena-'0');
+}
