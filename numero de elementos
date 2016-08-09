@@ -1,0 +1,38 @@
+#include <iostream>
+#include <conio.h>
+int contar(int n);
+using namespace std;
+
+void main()
+{
+	int a,e;
+
+	do{
+		cout<<"Ingrese un valor natural: ";
+			cin>>a;
+			if(a>0)
+			{
+
+			}
+			else
+			{
+				cout<<endl;
+				do{
+					cout<<"Error....Debes ingresar un valor positivo: ";
+					cin>>a;}while(a<0);
+				}
+	}while(a<0);
+	e=contar(a);
+	cout<<"el numero de elementos es: "<<e;
+	getch();
+}
+int contar(int n)
+{	int u,c=0;
+	for(int i=1;i<=n;i=i*10)
+	{
+		u=(n/i)%10;
+
+		c=c+1;
+	}
+	return c;
+}
