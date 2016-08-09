@@ -1,12 +1,12 @@
 #include <iostream>
 #include <conio.h>
 int contar(int n);
+int  suma(int n);
 using namespace std;
 
 void main()
 {
-	int a,e;
-
+	int a,e,s,op;
 	do{
 		cout<<"Ingrese un valor natural: ";
 			cin>>a;
@@ -22,8 +22,27 @@ void main()
 					cin>>a;}while(a<0);
 				}
 	}while(a<0);
-	e=contar(a);
-	cout<<"el numero de elementos es: "<<e;
+	cout<<"1. Sumar elementos del numero"<<endl;
+	cout<<"2. Contar los elementos del numero"<<endl;
+	cout<<"0. Salir"<<endl;
+	cin>>op;
+
+	switch(op){
+		case 1:{
+				s=suma(a);
+				cout<<endl;
+				cout<<"La suma de los elementos del numero es: "<<s;
+				break;}
+		case 2:{
+				e=contar(a);
+				cout<<endl;
+				cout<<"El numero de elementos es: "<<e;
+				break;}
+		case 0: {cout<<"Salir"<<endl;
+			break;}
+		default : {cout<<"Valor invalido"<<endl;
+			break;}
+	}
 	getch();
 }
 int contar(int n)
@@ -31,8 +50,19 @@ int contar(int n)
 	for(int i=1;i<=n;i=i*10)
 	{
 		u=(n/i)%10;
-
+		
 		c=c+1;
 	}
 	return c;
+}
+int suma(int n)
+{	int s=0,u;
+
+	for(int i=1;i<=n;i=i*10)
+	{
+		u=(n/i)%10;
+		s=s+u;
+	}
+	return s;
+
 }
